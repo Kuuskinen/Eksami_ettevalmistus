@@ -9,7 +9,7 @@
 		exit();
 		
 		}
-		
+		//Sitta kah
 		
 	if(isset($_GET["logout"])){ 
 		
