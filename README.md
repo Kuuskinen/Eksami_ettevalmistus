@@ -1,1 +1,3 @@
-# Eksami_ettevalmistus
+daaaaaaaaaaaaamn :)
+
+ELU ON LILL JA  KÕIK ON HÄSTI :P
