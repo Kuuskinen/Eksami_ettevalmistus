@@ -9,6 +9,10 @@
 		exit();
 		
 		}
+<<<<<<< HEAD
+=======
+		//Sitta kah
+>>>>>>> 4132326191ae74e0a6fe6b2f5d7f8612200cce74
 		
 	if(isset($_GET["logout"])){ 
 		
