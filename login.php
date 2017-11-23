@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 	//require("../../../vpconfig.php");
 =======
 	//require("../../../config.php");    // kui probleem on kodutööga ja andmebaasiga 
@@ -257,3 +257,4 @@
 		
 </body>
 </html>
+*/
