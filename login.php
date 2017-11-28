@@ -1,9 +1,5 @@
 <?php
-/*<<<<<<< HEAD
-	//require("../../../vpconfig.php");
-=======
 	//require("../../../config.php");    // kui probleem on kodutööga ja andmebaasiga 
->>>>>>> 04f9f2000c3346c3c2dbc7e3bd373e0298fd5968
 	require("functions.php");
 	//echo $serverHost;
 	
@@ -199,13 +195,8 @@
 	<title>Sisselogimine või uue kasutaja loomine</title>
 </head>
 <body>
-<<<<<<< HEAD
-	<h1>Heade mõtete veeb</h1>
-	<p>Värskeim hea mõte: <span><?php echo latestIdea(); ?></span></p>
-=======
 	<h1>Head mõtted<h1>
 	<P>Värskeim hea mõte: <span><?php echo latestIdea();?></span></p> 
->>>>>>> 04f9f2000c3346c3c2dbc7e3bd373e0298fd5968
 	<h2>Logi sisse!</h2>
 	<p>Siin harjutame sisselogimise funktsionaalsust.</p>
 	
@@ -257,4 +248,3 @@
 		
 </body>
 </html>
-*/

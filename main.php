@@ -9,23 +9,24 @@
 		exit();
 		
 		}
-<<<<<<< HEAD
-=======
 		//Sitta kah
->>>>>>> 4132326191ae74e0a6fe6b2f5d7f8612200cce74
 		
 	if(isset($_GET["logout"])){ 
 		
-		session_destroy(); //unustatakse kõik kasutajaga
+		session_destroy();                                              //unustatakse kõik kasutajaga
 		
 		header("Location: login.php");
 		exit();
 	
+	
 	}
+	
+	
 	
 	// Hello, It´s a test muutujad.
 	$myName = "Karl";
 	$myFamilyName = "Raid";
+	
 	
 	$picDir = "../../pics/";
 	$picFiles = [];
@@ -36,8 +37,17 @@
 		$fileType = pathinfo ($file,  PATHINFO_EXTENSION);
 		if (in_array($fileType, $picFileTypes) ==true){
 			array_push($picFiles, $file);           // kui soonelised suled lõppevadsiis ; 
+			
+			
+			
 		}
+		
+		
+		
 	}
+	
+	
+	
 	
 	//Var_dump($allFiles);
 	//$picFiles = array_slice($allFiles, 2);
@@ -45,7 +55,12 @@
 	$picFileCount = count ($picFiles);
 	$picNumber = mt_rand(0, $picFileCount - 1);                                     // rand ja mt rand   juhuslikus veel parem kiirem ja parem -1 soovitav ja lisa see
 	$picFile = $picFiles[$picNumber];
+	
+	
+
 	?>	
+
+
 
 <!DOCTYPE html>
 <html>
@@ -54,6 +69,11 @@
 	<title>
 		 KarErik veebi programeerimine 
 	</title>
+
+
+
+
+
 </head>
 <body>
 	<h1> 
