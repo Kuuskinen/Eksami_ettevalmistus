@@ -22,10 +22,7 @@
 		
 		
 	}
-	
-	
-	
-	
+
 	//Var_dump($allFiles);
 	//$picFiles = array_slice($allFiles, 2);
 	//var_dump($picFiles);
@@ -35,9 +32,7 @@
 	
 	
 
-	?>	
-
-
+?>	
 
 <!DOCTYPE html>
 <html>
@@ -46,18 +41,11 @@
 	<title>
 		 KarErik veebi programeerimine 
 	</title>
-
-
-
-
-
 </head>
 <body>
 	<h1> 
 		<?php echo $myName ." " .$myFamilyName; ?>"pildid, head ja body vaja mingeid asju lisada" 
 	</h1>
 	<img src="<?php echo $picDir .$picFile; ?>" alt="foto">     
-	
-</body>
-		
+</body>	
 </html>
