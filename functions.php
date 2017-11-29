@@ -66,17 +66,12 @@
 			$notice = "Mõte salvestatud";
 		}else{
 			$notice = "salvestamisel tekkis viga: " .$stmt->error;
-			
 		}
 		$stmt->close();
 		$mysqli->close();
 		return$notice;
 		
 	}
-	
-	
-	
-	
 	
 	function listIdeas(){ 
 		$notice="";
@@ -110,21 +105,11 @@
 		$stmt->bind_result($idea);
 		$stmt->execute();
 		$stmt->fetch();
-		
-		
-		
-		
-		
 		$stmt->close();
 		$mysqli->close();
 		return$idea;
 	}
 		
-		
-		
-		
-		
-	
 	//sisestuse kontrollimine
 	function test_input($data){
 		$data = trim($data);//eemaldab lõpust tühiku, tab vms

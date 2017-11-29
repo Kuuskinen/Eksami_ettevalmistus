@@ -1,32 +1,25 @@
-
 <?php
-	//et pääseks ligi sessioonile ja funktsioonidele
+    //NB! Palun treppige koodi ning ärge jätke ebavajalikke tühikuid! Koodihügieen on sama oluline kui isiklik hügieen! Aitäh! Teie ML
 	
+	//et pääseks ligi sessioonile ja funktsioonidele
 	require("functions.php");
-	//kui pole logind saadab login lehele
+	
+	//kui pole loginud suunab login lehele
 	if(!isset($_SESSION["userid"])){
 		header("Location: login.php");
 		exit();
-		
 		}
-		//Sitta kah
-		
+	
+	//unustatakse kasutajaga seotud sessioon
 	if(isset($_GET["logout"])){ 
-		
-		session_destroy();                                              //unustatakse kõik kasutajaga
-		
+		session_destroy();                                             
 		header("Location: login.php");
 		exit();
-	
-	
 	}
-	
-	
 	
 	// Hello, It´s a test muutujad.
 	$myName = "Karl";
 	$myFamilyName = "Raid";
-	
 	
 	$picDir = "../../pics/";
 	$picFiles = [];
@@ -37,29 +30,17 @@
 		$fileType = pathinfo ($file,  PATHINFO_EXTENSION);
 		if (in_array($fileType, $picFileTypes) ==true){
 			array_push($picFiles, $file);           // kui soonelised suled lõppevadsiis ; 
-			
-			
-			
 		}
-		
-		
-		
 	}
-	
-	
-	
 	
 	//Var_dump($allFiles);
 	//$picFiles = array_slice($allFiles, 2);
 	//var_dump($picFiles);
 	$picFileCount = count ($picFiles);
-	$picNumber = mt_rand(0, $picFileCount - 1);                                     // rand ja mt rand   juhuslikus veel parem kiirem ja parem -1 soovitav ja lisa see
+	$picNumber = mt_rand(0, $picFileCount - 1); // rand ja mt rand juhuslikus veel parem kiirem ja parem -1 soovitav ja lisa see
 	$picFile = $picFiles[$picNumber];
 	
-	
-
-	?>	
-
+?>	
 
 
 <!DOCTYPE html>
@@ -67,21 +48,16 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		 KarErik veebi programeerimine 
-	</title>
-
-
-
-
-
+		Kosmosefotod?
+	</title
 </head>
 <body>
 	<h1> 
 		<?php echo $myName ." " .$myFamilyName; ?>"pildid, head ja body vaja mingeid asju lisada" 
 	</h1>
-	<p><a href="?logout=1"> Logi Välja</a></p>                                                            <!-- get meetodil -->
+	<p>See veebileht on loodud tõsise õppetöö raames.</p>
+	<p><a href="?logout=1">Logi välja</a></p><!-- get meetodil -->
 	<img src="<?php echo $picDir .$picFile; ?>" alt="foto">     
 	
 </body>
-		
 </html>
