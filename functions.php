@@ -22,7 +22,7 @@
 				//salvestame sessioonimuutujaid
 				$_SESSION["firstname"] = $firstnameFromDb;
 				$_SESSION["lastname"] = $lastnameFromDb;
-				$_SESSION["userId"] = $id;
+				$_SESSION["userId"] = $idFromDb;
 				$_SESSION["userEmail"] = $emailFromDb;
 				
 				//liigume pealehele

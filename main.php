@@ -37,6 +37,8 @@
 	$picNumber = mt_rand(0, $picFileCount - 1); // rand ja mt rand juhuslikus veel parem kiirem ja parem -1 soovitav ja lisa see
 	$picFile = $picFiles[$picNumber];
 	
+	echo "Kasutaja: ".$_SESSION["userId"];
+	
 ?>	
 
 

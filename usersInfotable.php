@@ -1,9 +1,9 @@
 <?php
 	//kui pole sisseloginud, siis sisselogimise lehele
-	if(!isset($_SESSION["userId"])){
+	/*if(!isset($_SESSION["userId"])){
 		header("Location: login.php");
 		exit();
-	}
+	}*/
 	
 	function createUsersTable(){
 		$table = '<table border="1" style="border: 1px solid black; border-collapse: collapse">' ."\n";

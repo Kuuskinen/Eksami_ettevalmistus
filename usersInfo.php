@@ -9,7 +9,7 @@ if(!isset($_SESSION["userId"])){
 }
 
 //Väljalogimine
-if(!isset($_GET["logout"])){
+if(isset($_GET["logout"])){
 	session_destroy(); //lõpetab sessioni
 	header("Location: login.php");
 }
