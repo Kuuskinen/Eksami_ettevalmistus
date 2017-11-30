@@ -4,11 +4,11 @@
 	//et pääseks ligi sessioonile ja funktsioonidele
 	require("functions.php");
 	
-	//kui pole loginud suunab login lehele
-	if(!isset($_SESSION["userid"])){
+	//kui pole loginud suunab login lehele SEE ON VÄLJAS, ET DEADLOCK EI TEKIKS!
+	/*if(!isset($_SESSION["userid"])){
 		header("Location: login.php");
 		exit();
-		}
+		}*/
 	
 	//unustatakse kasutajaga seotud sessioon
 	if(isset($_GET["logout"])){ 
@@ -17,19 +17,16 @@
 		exit();
 	}
 	
-	// Hello, It´s a test muutujad.
-	$myName = "Karl";
-	$myFamilyName = "Raid";
-	
-	$picDir = "../../pics/";
+	//Muutujad
+	$picDir = "../pics/";
 	$picFiles = [];
 	$picFileTypes = ["jpg", "jpeg", "png", "gif"];
 	
 	$allFiles = array_slice (scandir($picDir), 2);
 	foreach ($allFiles as $file){
 		$fileType = pathinfo ($file,  PATHINFO_EXTENSION);
-		if (in_array($fileType, $picFileTypes) ==true){
-			array_push($picFiles, $file);           // kui soonelised suled lõppevadsiis ; 
+		if (in_array($fileType, $picFileTypes) == true){
+			array_push($picFiles, $file);            
 		}
 	}
 	
@@ -51,12 +48,12 @@
 		Kosmosefotod?
 	</title
 </head>
-<body>
-	<h1> 
-		<?php echo $myName ." " .$myFamilyName; ?>"pildid, head ja body vaja mingeid asju lisada" 
-	</h1>
+<body bgcolor=#BDBDBD>
+    <h1>NASA kosmosefotod</h1>
+	<h4>Sa oled sisselogitud kui: <?php echo $_SESSION["firstname"] ." " .$_SESSION["lastname"]; ?></h4> 
 	<p>See veebileht on loodud tõsise õppetöö raames.</p>
 	<p><a href="?logout=1">Logi välja</a></p><!-- get meetodil -->
+	<p><a href="photoupload.php">Fotode üleslaadimine</a></p>
 	<img src="<?php echo $picDir .$picFile; ?>" alt="foto">     
 	
 </body>

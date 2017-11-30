@@ -1,6 +1,6 @@
 <?php
-	$database = "if17_karl";
-	require("../../../config.php");
+	$database = "if17_lutsmeel"; //<---- KASUTAME MEELISE ANDMEBAASI
+	require("../../config.php");
 	//alustame sessiooni
 	session_start();
 	
@@ -8,7 +8,7 @@
 	function signIn($email, $password){
 		$notice = "";
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-		$stmt = $mysqli->prepare("SELECT id, email, password FROM karl WHERE email = ?");   // karl on konto selle asemel oleks pidand olema vpluser
+		$stmt = $mysqli->prepare("SELECT id, email, password FROM vpusers WHERE email = ?");   
 		$stmt->bind_param("s",$email);
 		$stmt->bind_result($id, $emailFromDb, $passwordFromDb);
 		$stmt->execute();
@@ -41,7 +41,7 @@
 		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		//valmistame ette käsu andmebaasiserverile
-		$stmt = $mysqli->prepare("INSERT INTO karl (firstname, lastname, birthday, gender, email, password) VALUES (?, ?, ?, ?, ?, ?)");
+		$stmt = $mysqli->prepare("INSERT INTO vpusers (firstname, lastname, birthday, gender, email, password) VALUES (?, ?, ?, ?, ?, ?)");
 		echo $mysqli->error;
 		//s - string
 		//i - integer
@@ -81,7 +81,7 @@
 		$stmt= $mysqli->prepare ("SELECT id, idea, ideacolor FROM userideas WHERE userid =? AND deleted IS NULL ORDER by id DESC ");
 		echo$mysqli->error;
 		$stmt->bind_param("i", $_SESSION["userId"]);
-		$stmt->bind_result($id, $idea, $color);                                      //järjekord peab sama olema mis rida 86
+		$stmt->bind_result($id, $idea, $color); // järjekord peab sama olema mis rida 81
 		$stmt->execute();
 		
 		while($stmt->fetch()){
@@ -118,17 +118,4 @@
 		return $data;
 	}
 	
-	/*$x = 8;
-	$y = 5;
-	echo "Esimene summa on: " .($x + $y);
-	addValues();
-	
-	function addValues(){
-		echo "Teine summa on: " .($GLOBALS["x"] + $GLOBALS["y"]);
-		$a = 4;
-		$b = 1;
-		echo "Kolmas summa on: " .($a + $b);
-	}
-	
-	echo "Neljas summa on: " .($a + $b);*/
 ?>
