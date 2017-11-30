@@ -10,7 +10,7 @@
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		$stmt = $mysqli->prepare("SELECT firstname, lastname, id, email, password FROM vpusers WHERE email = ?");   
 		$stmt->bind_param("s",$email);
-		$stmt->bind_result($firstname, $lastname, $id, $emailFromDb, $passwordFromDb);
+		$stmt->bind_result($firstnameFromDb, $lastnameFromDb, $idFromDb, $emailFromDb, $passwordFromDb);
 		$stmt->execute();
 		
 		//kontrollime kasutajat
@@ -20,8 +20,8 @@
 				$notice = "Kõik korras! Logisimegi sisse!";
 				
 				//salvestame sessioonimuutujaid
-				$_SESSION["firstname"] = $firstname;
-				$_SESSION["lastname"] = $lastname;
+				$_SESSION["firstname"] = $firstnameFromDb;
+				$_SESSION["lastname"] = $lastnameFromDb;
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;
 				

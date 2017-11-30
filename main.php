@@ -57,6 +57,7 @@
 	<tr>
 	<th><p><a href="?logout=1">Logi välja</a></p><!-- get meetodil -->
 	<p><a href="photoupload.php">Fotode üleslaadimine</a></p>
+	<p><a href="usersInfo.php">Kasutajate info</a></p>
 	</th>
 	</tr>
 	</table>

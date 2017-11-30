@@ -1,6 +1,6 @@
 <?php
 require("functions.php");
-//require("usersinfotable.php");
+require("usersInfotable.php");
 
 //Kui pole sisselogitud, saadab login lehele
 if(!isset($_SESSION["userId"])){
@@ -16,12 +16,16 @@ if(!isset($_GET["logout"])){
 
 ?>
 
-</head>
-<body class="bg-dark">
-    <div class="row">
-	<div class="col-sm-2">
-		<p><a href="?logout=1">Logi välja</a></p>
-		<p><a href="main.php">Pealeht</a></p>
-	</div>
+<table border="15">
+	<tr>
+	<th><p><a href="?logout=1">Logi välja</a></p>	
+	<p><a href="main.php">Pealeht</a></p>
+	<p><a href="photoupload.php">Fotode üleslaadimine</a></p>
+	</th>
+	</tr>
+</table>
 
-<p>Õnnestus</p>
+<!DOCTYPE html>
+<body>
+<h1>Kõik kasutajad</h1>
+<?php echo createUsersTable(); ?>
