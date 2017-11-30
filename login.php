@@ -29,6 +29,7 @@
 	$loginEmailError ="";
 	
 	//kas klõpsati sisselogimise nuppu
+	
 	if(isset($_POST["signinButton"])){
 	
 	//kas on kasutajanimi sisestatud
@@ -190,35 +191,40 @@
 ?>
 <!DOCTYPE html>
 <html lang="et">
+<center>
 <head>
 	<meta charset="utf-8">
 	<title>Sisselogimine või uue kasutaja loomine</title>
 </head>
-<body>
-	<h1>Head mõtted<h1>
-	<P>Värskeim hea mõte: <span><?php echo latestIdea();?></span></p> 
-	<h2>Logi sisse!</h2>
-	<p>Siin harjutame sisselogimise funktsionaalsust.</p>
+
+<body bgcolor="#B7B7BA">
 	
+	<h1>Login plz<h1>
+	<P>Silver leiutab OÜ</p> 
+	<table border="35">
+	<tr>
+	<th><h2>Logi sisse!</h2>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 		<label>Kasutajanimi (E-post): </label>
-		<input name="loginEmail" type="email" value="<?php echo $loginEmail; ?>"><span><?php echo $loginEmailError; ?></span>
+		<input name="loginEmail" placeholder="Email" type="email" value="<?php echo $loginEmail; ?>"><span><?php echo $loginEmailError; ?></span>
 		<br><br>
 		<input name="loginPassword" placeholder="Salasõna" type="password"><span></span>
 		<br><br>
 		<input name="signinButton" type="submit" value="Logi sisse"><span><?php echo $notice; ?></span>
 	</form>
+	</th>
 	
-	<h2>Loo kasutaja</h2>
-	<p>Kui pole veel kasutajat....</p>
+	<th><h2>Loo kasutaja</h2>
+
+	
 	
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 		<label>Eesnimi </label>
-		<input name="signupFirstName" type="text" value="<?php echo $signupFirstName; ?>">
+		<input name="signupFirstName" placeholder="Eesnimi" type="text" value="<?php echo $signupFirstName; ?>">
 		<span><?php echo $signupFirstNameError; ?></span>
 		<br>
 		<label>Perekonnanimi </label>
-		<input name="signupFamilyName" type="text" value="<?php echo $signupFamilyName; ?>">
+		<input name="signupFamilyName" placeholder="Perekonnanimi" type="text" value="<?php echo $signupFamilyName; ?>">
 		<span><?php echo $signupFamilyNameError; ?></span>
 		<br>
 		<label>Sisesta oma sünnikuupäev</label>
@@ -235,7 +241,7 @@
 		<br><br>
 		
 		<label>Kasutajanimi (E-post)</label>
-		<input name="signupEmail" type="email" value="<?php echo $signupEmail; ?>">
+		<input name="signupEmail" placeholder="E-post" type="email" value="<?php echo $signupEmail; ?>">
 		<span><?php echo $signupEmailError; ?></span>
 		<br><br>
 		<input name="signupPassword" placeholder="Salasõna" type="password">
@@ -244,7 +250,10 @@
 
 		
 		<input name="signupButton" type="submit" value="Loo kasutaja">
+	</th>
+	</tr>
 	</form>
-		
+	</table>
+</center>		
 </body>
 </html>
