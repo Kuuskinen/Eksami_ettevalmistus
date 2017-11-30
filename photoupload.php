@@ -4,10 +4,10 @@
 	$notice = "";
 	
 	//kui pole sisseloginud, siis sisselogimise lehele
-	if(!isset($_SESSION["userId"])){
+	/*if(!isset($_SESSION["userId"])){
 		header("Location: login.php");
 		exit();
-	}
+	}*/
 	
 	//kui logib välja
 	if (isset($_GET["logout"])){
@@ -179,15 +179,37 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>
-		Võetud eelmises proges viga vaata otsi veebiprogemise asjad
-	</title>
+	<title>Photoupload</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<h1>Hope</h1>
-	<p>See veebileht on loodud veebiprogrammeerimise kursusel ning ei sisalda mingisugust tõsiseltvõetavat sisu.</p>
-	<p><a href="?logout=1">Logi välja</a>!</p>
-	<p><a href="main.php">Pealeht</a></p>
+<body class="bg-secondary">
+<div class="container bg-secondary">
+<nav class="navbar navbar_inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"</a>
+		</div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="main.php">Home</a></li>
+      <li><a href="login.php">Foto</a></li>
+	  <li><a href="?logout=1">Loguout</a></li>
+    </ul>
+  </div>
+</nav>
+  
+
+ 
+
+	<h1>Photoloading</h1>
+	
+	<!--<p><a href="?logout=1">Logi välja</a>!</p>-->
+	<!--<p><a href="main.php">Pealeht</a></p>-->
+	
+	 
+	
 	<hr>
 	<h2>Foto üleslaadimine</h2>
 	<form action="photoupload.php" method="post" enctype="multipart/form-data">
@@ -198,5 +220,6 @@
 	
 	<span><?php echo $notice; ?></span>
 	<hr>
+	</div>
 </body>
 </html>
