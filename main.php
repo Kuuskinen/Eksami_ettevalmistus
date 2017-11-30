@@ -49,12 +49,17 @@
 	</title
 </head>
 <body bgcolor=#BDBDBD>
-    <h1>NASA kosmosefotod</h1>
+    <center><h1>NASA kosmosefotod</h1>
 	<h4>Sa oled sisselogitud kui: <?php echo $_SESSION["firstname"] ." " .$_SESSION["lastname"]; ?></h4> 
-	<p>See veebileht on loodud tõsise õppetöö raames.</p>
-	<p><a href="?logout=1">Logi välja</a></p><!-- get meetodil -->
+	<p>PEALEHT</p>
+	</center>
+	<table border="15">
+	<tr>
+	<th><p><a href="?logout=1">Logi välja</a></p><!-- get meetodil -->
 	<p><a href="photoupload.php">Fotode üleslaadimine</a></p>
-	<img src="<?php echo $picDir .$picFile; ?>" alt="foto">     
-	
+	</th>
+	</tr>
+	</table>
+	<center><img src="<?php echo $picDir .$picFile; ?>" alt="foto"></center> 
 </body>
 </html>
