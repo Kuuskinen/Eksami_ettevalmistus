@@ -13,7 +13,7 @@ if(isset($_GET["logout"])){
 	session_destroy(); //lõpetab sessioni
 	header("Location: login.php");
 }
-
+//PHP käib kogu koodi läbi ja teeb oma asju(nt. prindib HTMLi juurde/muudatusi. Pärast käimist on PHP kood nö kadunud ja alles on ainult HTML ja siis see HTML saadetakse brauserisse, millega ta näitab ilusat pilti.
 ?>
 
 <table border="15">
