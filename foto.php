@@ -73,7 +73,6 @@ body {
 <!-- Pealis -->
 <div class="header">
   <h1>Pildid</h1>
-  <p>Click on the buttons to change the grid view.</p>
   <button onclick="four()">1</button>
 </div>
 
