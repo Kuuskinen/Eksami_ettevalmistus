@@ -24,7 +24,7 @@
 	
 	
 	//Algab foto laadimise osa
-	$target_dir = "../pics/";
+	$target_dir = "pics/";
 	$target_file = "";
 	$uploadOk = 1;
 	$maxWidth = 600;

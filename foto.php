@@ -3,7 +3,7 @@
 	// Hello, It´s a test muutujad.
 	//$myName = "Karl";
 	//$myFamilyName = "Raid";
-	$picDir = "../pics/";
+	$picDir = "pics/";
 	$picFiles = [];
 	$picFileTypes = ["jpg", "jpeg", "png", "gif"];
 	

@@ -18,7 +18,7 @@
 	}
 	
 	//Muutujad
-	$picDir = "../pics/";
+	$picDir = "pics/";
 	$picFiles = [];
 	$picFileTypes = ["jpg", "jpeg", "png", "gif"];
 	
