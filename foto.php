@@ -46,7 +46,7 @@
 		</div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="main.php">Kodu</a></li>
-      <li><a href="foto.php">Pildid</a></li>
+      <li><a href="photoupload.php">Pildi üleslaadimine</a></li>
 	  <li><a href="usersInfo.php">Kasutajate andmed</a></li>
 	  <li><a href="?logout=1">Logi välja</a></li>
     </ul>
