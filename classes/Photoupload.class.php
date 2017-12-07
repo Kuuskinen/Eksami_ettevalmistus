@@ -28,7 +28,8 @@
 		}
 		
 		public function savePhoto($directory, $fileName){
-			$target_file=$directory .$fileName;
+			$target_file=$directory .$fileName; 
+			echo $target_file;
 			if($this->imageFileType == "jpg" or $this->imageFileType == "jpeg"){
 				if(imagejpeg($this->myImage, $target_file, 90)){
 					$notice= "Fail laeti üles! ";
@@ -115,7 +116,7 @@
 		public function addTextWatermark($text){
 			$textColor = imagecolorallocatealpha($this->myImage, 255,255,255,60);//alpha 0 - 127
 					//mis pildile, suurus, nurk vastupäeva, x, y, värv, font, tekst
-			imagettftext($this->myImage, 20, -45, 10, 25, $textColor, "../../graphics/ARIAL.TTF", $text);
+			imagettftext($this->myImage, 20, -45, 10, 25, $textColor, "graphics/ARIAL.TTF", $text);
 			
 		}
 			
