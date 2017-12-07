@@ -77,7 +77,7 @@
 			} else {// pildi laadimine klassi abil
 				$myPhoto=new Photoupload($_FILES["fileToUpload"]["tmp_name"], $imageFileType);
 				$myPhoto->rezisePhoto($maxWidth, $maxHeight);
-				$myPhoto->addwatermark("../../graphics/hmv_logo.png", $marginHor, $marginVer);
+				$myPhoto->addwatermark("graphics/hmv_logo.png", $marginHor, $marginVer);
 				$myPhoto->addTextWatermark("Lõbusad pildid");
 				$notice=$myPhoto->savePhoto($target_dir, $target_file);
 				//$mtPhoto->saveOriginal($target_dir, $file_file);
