@@ -14,14 +14,15 @@
 		header("Location: login.php");
 		exit();
 	}
-	/*kui soovitakse ideed salvestada
-	if(isset($_POST["ideaBtn"])){
+	//kui soovitakse ideed salvestada
+	if(isset($_POST["ideaButton"])){
 		//echo $_POST["ideaColor"];
 		if(isset($_POST["userIdea"]) and isset($_POST["ideaColor"]) and !empty($_POST["userIdea"]) and !empty($_POST["ideaColor"])){
 			$myIdea = test_input($_POST["userIdea"]);
-			$notice = saveMyIdea($myIdea, $_POST["ideaColor"]);
+			$notice = saveIdea($myIdea, $_POST["ideaColor"]);
+			echo $notice;
 		}
-	}*/
+	}
 	
 ?>
 
@@ -58,16 +59,17 @@
 		<label>Lisa uus tsitaat</label>
 		<input name="userIdea" type="text">
 		<br>
-	
-		<input name="ideaBtn" type="submit" value="Salvesta"><span><?php echo $notice; ?></span>
+		<label>Mõttega seonduv värv: </label>
+		<input name="ideaColor" type="color">
+		<br>
+		<input name="ideaButton" type="submit" value="Salvesta mõte!">
+		<span><?php echo $notice; ?></span>
+		
 	</form>
 	<hr>
-	<h2>Sinu sisestatud</h2>
 	<div style="width: 40%">
 		<?php echo listIdeas(); ?>
 	</div>
-	
-	
 </body>
 </html>
 

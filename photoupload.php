@@ -86,9 +86,9 @@
 				
 				unset($myPhoto);//muutujalt võetakse väärtus ära.  Unustatakse mis classiga seotud		
 		
-		} else {
+		    } else {
 			$notice = "Palun valige kõigepealt pildifail!";
-		}
+		    }
 	} //if submit lõppeb
 	
 	/*function resizeImage($image, $origW, $origH, $w, $h){

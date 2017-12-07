@@ -59,12 +59,14 @@
 		$mysqli->close();
 	}
 	
-	function saveIdea($idea, $color){
+	function saveIdea($userIdea, $color){
 		$notice = "";
+		echo "SIIA JÕUDIS ENNE";
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		$stmt = $mysqli->prepare("INSERT INTO vpuserideas (userid, idea, ideacolor) VALUES (?, ?, ?)");
+		echo "SIIA JÕUDIS";
 		echo $mysqli->error;
-		$stmt->bind_param("iss", $_SESSION["userId"], $idea, $color);
+		$stmt->bind_param("iss", $_SESSION["userId"], $userIdea, $color);
 		if($stmt->execute()){
 			$notice = "Mõte on salvestatud!";
 		} else {
@@ -84,12 +86,12 @@
 		$stmt = $mysqli->prepare("SELECT id, idea, ideacolor FROM vpuserideas WHERE userid = ? ORDER BY id DESC"); //mida baasist tahame
 		echo $mysqli->error;
 		$stmt->bind_param("i", $_SESSION["userId"]); // see paneb muutujad andmebaasi käsku
-		$stmt->bind_result($id, $idea, $color); // paneb muutujatesse väärtused
+		$stmt->bind_result($id, $userIdea, $color); // paneb muutujatesse väärtused
 		$stmt->execute(); // annab käsu korraldus täita
 		
 		while($stmt->fetch()){
 			//<p style="background-color: #ff5577">Hea mõte</p>
-			$notice .= '<p style="background-color: ' .$color .'">' .$idea .' | <a href="editusersideas.php?id=' .$id .'">Toimeta</a>' ."</p> \n"; //SEE ON TEGELIKKUS
+			$notice .= '<p style="background-color: ' .$color .'">' .$userIdea .' | <a href="editusersideas.php?id=' .$id .'">Toimeta</a>' ."</p> \n"; //SEE ON TEGELIKKUS
 			//<p style="background-color: #00ff00">Ma töötan! | <a ref="edituseridea.php?id=34">Toimeta</a></p> SEE ON NÄIDE
 		}
 		
