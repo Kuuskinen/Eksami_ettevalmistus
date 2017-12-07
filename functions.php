@@ -58,58 +58,57 @@
 		$stmt->close();
 		$mysqli->close();
 	}
-	function saveIdea($idea, $color){																		//püüame userideast kinni need
-		$notice="";
+	
+	function saveIdea($idea, $color){
+		$notice = "";
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-		$stmt = $mysqli->prepare ("INSERT INTO userideas(userid, idea, ideacolor)VALUES(?, ?, ?) ");
-		//echo $ mysqli->error;
-		$stmt->bind_param("iss", $_SESSION["userId"], $idea, $color);              //mida tabelisse
+		$stmt = $mysqli->prepare("INSERT INTO vpuserideas (userid, idea, ideacolor) VALUES (?, ?, ?)");
+		echo $mysqli->error;
+		$stmt->bind_param("iss", $_SESSION["userId"], $idea, $color);
 		if($stmt->execute()){
-			$notice = "Mõte salvestatud";
-		}else{
-			$notice = "salvestamisel tekkis viga: " .$stmt->error;
+			$notice = "Mõte on salvestatud!";
+		} else {
+			$notice = "Salvestamisel tekkis viga: " .$stmt->error;
 		}
+			
 		$stmt->close();
 		$mysqli->close();
-		return$notice;
-		
+		return $notice;
 	}
 	
-	function listIdeas(){ 
-		$notice="";
-		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-		//$stmt= $mysqli->prepare ("SELECT idea, ideacolor, FROM userideas");
-		//$stmt= $mysqli->prepare ("SELECT idea, ideacolor, FROM userideas ORDER by id DESC");
-		$stmt= $mysqli->prepare ("SELECT id, idea, ideacolor FROM userideas WHERE userid =? AND deleted IS NULL ORDER by id DESC ");
-		echo$mysqli->error;
-		$stmt->bind_param("i", $_SESSION["userId"]);
-		$stmt->bind_result($id, $idea, $color); // järjekord peab sama olema mis rida 81
-		$stmt->execute();
+	function listIdeas(){
+		$notice = "";
+		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]); //andmebaasi ühendus
+		//$stmt = $mysqli->prepare("SELECT idea, ideacolor FROM vpuserideas");
+		//$stmt = $mysqli->prepare("SELECT idea, ideacolor FROM vpuserideas ORDER BY id DESC");
+		$stmt = $mysqli->prepare("SELECT id, idea, ideacolor FROM vpuserideas WHERE userid = ? ORDER BY id DESC"); //mida baasist tahame
+		echo $mysqli->error;
+		$stmt->bind_param("i", $_SESSION["userId"]); // see paneb muutujad andmebaasi käsku
+		$stmt->bind_result($id, $idea, $color); // paneb muutujatesse väärtused
+		$stmt->execute(); // annab käsu korraldus täita
 		
 		while($stmt->fetch()){
-			//<p style="background-color: #ff5577"> hea mõte </p>
-			//$notice .= '<p style="background-color:' .$color .'">' .$idea ."</p> /n";
-			$notice .= '<p style="background-color:' .$color .'">' .$idea .' | <a href="edituserideas.php?id=' .$id .'">Toimeta</a>' ."</p> \n";
-			//<p style="background-color: #ff5577"> Kõike saab paremini </p>
-			//<p style="background-color: #ff5577"> Kõike saab paremini | <a href="edituseridea.php?id=34">Toimeta </a></p>                             //|| vajalik osades keeltes viisakusest siin alt gr <> korra
+			//<p style="background-color: #ff5577">Hea mõte</p>
+			$notice .= '<p style="background-color: ' .$color .'">' .$idea .' | <a href="editusersideas.php?id=' .$id .'">Toimeta</a>' ."</p> \n"; //SEE ON TEGELIKKUS
+			//<p style="background-color: #00ff00">Ma töötan! | <a ref="edituseridea.php?id=34">Toimeta</a></p> SEE ON NÄIDE
 		}
-		
 		
 		$stmt->close();
 		$mysqli->close();
-		return$notice;
+		return $notice;
 	}
+	
 	function latestIdea(){
-		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-		$stmt = $mysqli->prepare("SELECT idea FROM userideas WHERE id= (SELECT MAX(id) FROM userideas WHERE deleted IS NULL)");
-		echo $mysqli ->error;
+		$stmt = $mysqli->prepare("SELECT idea FROM vpuserideas WHERE id = (SELECT MAX(id) FROM vpuserideas WHERE deleted IS NULL)");
+		echo $mysqli->error;
 		$stmt->bind_result($idea);
 		$stmt->execute();
 		$stmt->fetch();
+		
 		$stmt->close();
 		$mysqli->close();
-		return$idea;
+		return $idea;
 	}
 		
 	//sisestuse kontrollimine
