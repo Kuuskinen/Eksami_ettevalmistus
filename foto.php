@@ -24,10 +24,6 @@
 	foreach($picFiles as $file){
 		$pic_html.='<img src="'.$picDir .$file .'" alt="pilt">' ."\n";   
 	}
-	
-	
-	
-
 ?>	
 
 <!DOCTYPE html>
