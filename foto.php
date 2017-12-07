@@ -5,7 +5,7 @@
 	$myFamilyName = "Raid";
 	
 	
-	$picDir = "../../pics/";
+	$picDir = "../pics/";
 	$picFiles = [];
 	$picFileTypes = ["jpg", "jpeg", "png", "gif"];
 	
@@ -39,12 +39,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		 KarErik veebi programeerimine 
+		 Photos
 	</title>
 </head>
 <body>
 	<h1> 
-		<?php echo $myName ." " .$myFamilyName; ?>"pildid, head ja body vaja mingeid asju lisada" 
+		"Vahi pilte" 
 	</h1>
 	<img src="<?php echo $picDir .$picFile; ?>" alt="foto">     
 </body>	

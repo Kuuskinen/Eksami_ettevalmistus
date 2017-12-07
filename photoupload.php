@@ -179,7 +179,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Photoupload</title>
+	<title>Pildi üleslaadimine</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -193,10 +193,10 @@
 			<a class="navbar-brand" href="#"</a>
 		</div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="main.php">Home</a></li>
-      <li><a href="foto.php">Foto</a></li>
-	  <li><a href="usersInfo.php">Userinfo</a></li>
-	  <li><a href="?logout=1">Loguout</a></li>
+      <li class="active"><a href="main.php">Kodu</a></li>
+      <li><a href="foto.php">Pildid</a></li>
+	  <li><a href="usersInfo.php">Kasutajate andmed</a></li>
+	  <li><a href="?logout=1">Logi välja</a></li>
     </ul>
   </div>
 </nav>
@@ -204,7 +204,7 @@
 
  
 
-	<h1>Photoloading</h1>
+	<h1>Pildi üleslaadimine</h1>
 	
 	<!--<p><a href="?logout=1">Logi välja</a>!</p>-->
 	<!--<p><a href="main.php">Pealeht</a></p>-->
@@ -212,7 +212,7 @@
 	 
 	
 	<hr>
-	<h2>Foto üleslaadimine</h2>
+	
 	<form action="photoupload.php" method="post" enctype="multipart/form-data">
 		<label>Valige pildifail:</label>
 		<input type="file" name="fileToUpload" id="fileToUpload">
