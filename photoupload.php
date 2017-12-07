@@ -77,23 +77,18 @@
 			} else {// pildi laadimine klassi abil
 				$myPhoto=new Photoupload($_FILES["fileToUpload"]["tmp_name"], $imageFileType);
 				$myPhoto->rezisePhoto($maxWidth, $maxHeight);
-				$myPhoto->addwatermark("graphics/hmv_logo.png", $marginHor, $marginVer);
-				$myPhoto->addTextWatermark("Lõbusad pildid");
+				$myPhoto->addwatermark("graphics/rocket.png", $marginHor, $marginVer);
+				$myPhoto->addTextWatermark("For benefit of all");
 				$notice=$myPhoto->savePhoto($target_dir, $target_file);
 				//$mtPhoto->saveOriginal($target_dir, $file_file);
 				$myPhoto->clearImages();
 				
 				
 				unset($myPhoto);//muutujalt võetakse väärtus ära.  Unustatakse mis classiga seotud		
-<<<<<<< HEAD
-		
-		    } else {
-=======
 			}
 		} else {
->>>>>>> 596c8cbe71271c6c00654ba4734f762e86d4283f
 			$notice = "Palun valige kõigepealt pildifail!";
-		    }
+		}
 	} //if submit lõppeb
 	
 	/*function resizeImage($image, $origW, $origH, $w, $h){
