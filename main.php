@@ -66,14 +66,16 @@
 	  <li><a href="?logout=1">Logi välja</a></li>
     </ul>
   </div>
+
 </nav>
 	<center><img src="<?php echo $picDir .$picFile; ?>" alt="foto"></center> 
 </body>
+<center><A HREF="javascript:history.go(0)">Vajuta siia, et laeks järgmise suvalise pildi</A></center>
 
 <body style="background-color:lightgrey;">
-    <center><h1>NASA kosmosefotod</h1>
+    <center><h3>Siin on suvalises järjekorras kõik üleslaetud pildid</h3>
+	<h1>Vajuta <a href="https://www.nasa.gov/">SIIA</a> et minna NASA kodulehele.</h1>
 	<h4>Sa oled sisselogitud kui: <?php echo $_SESSION["firstname"] ." " .$_SESSION["lastname"]; ?></h4> 
-	<p>PEALEHT</p>
 	</center>
 
 </body>

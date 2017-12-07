@@ -85,7 +85,7 @@
 				
 				
 				unset($myPhoto);//muutujalt võetakse väärtus ära.  Unustatakse mis classiga seotud		
-		
+			}
 		} else {
 			$notice = "Palun valige kõigepealt pildifail!";
 		}

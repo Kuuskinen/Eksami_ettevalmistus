@@ -115,7 +115,7 @@
 		public function addTextWatermark($text){
 			$textColor = imagecolorallocatealpha($this->myImage, 255,255,255,60);//alpha 0 - 127
 					//mis pildile, suurus, nurk vastupäeva, x, y, värv, font, tekst
-			imagettftext($this->myImage, 20, -45, 10, 25, $textColor, "../../graphics/ARIAL.TTF", $text);
+			imagettftext($this->myImage, 20, -45, 10, 25, $textColor, "graphics/ARIAL.TTF/", $text);
 			
 		}
 			
