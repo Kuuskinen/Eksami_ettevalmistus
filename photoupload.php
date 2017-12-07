@@ -24,7 +24,7 @@
 	
 	
 	//Algab foto laadimise osa
-	$target_dir = "../../pics/";
+	$target_dir = "../pics/";
 	$target_file = "";
 	$uploadOk = 1;
 	$maxWidth = 600;
@@ -194,7 +194,8 @@
 		</div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="main.php">Home</a></li>
-      <li><a href="login.php">Foto</a></li>
+      <li><a href="foto.php">Foto</a></li>
+	  <li><a href="usersInfo.php">Userinfo</a></li>
 	  <li><a href="?logout=1">Loguout</a></li>
     </ul>
   </div>
