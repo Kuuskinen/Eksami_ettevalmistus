@@ -46,23 +46,35 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>
-		Kosmosefotod?
-	</title
+	<title>Kosmosefotod?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body bgcolor=#BDBDBD>
+<body class="bg-secondary">
+<div class="container bg-secondary">
+<nav class="navbar navbar_inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"</a>
+		</div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="main.php">Kodu</a></li>
+      <li><a href="foto.php">Pildid</a></li>
+	  <li><a href="usersInfo.php">Kasutajate andmed</a></li>
+	  <li><a href="?logout=1">Logi välja</a></li>
+    </ul>
+  </div>
+</nav>
+	<center><img src="<?php echo $picDir .$picFile; ?>" alt="foto"></center> 
+</body>
+
+<body style="background-color:lightgrey;">
     <center><h1>NASA kosmosefotod</h1>
 	<h4>Sa oled sisselogitud kui: <?php echo $_SESSION["firstname"] ." " .$_SESSION["lastname"]; ?></h4> 
 	<p>PEALEHT</p>
 	</center>
-	<table border="15">
-	<tr>
-	<th><p><a href="?logout=1">Logi välja</a></p><!-- get meetodil -->
-	<p><a href="photoupload.php">Fotode üleslaadimine</a></p>
-	<p><a href="usersInfo.php">Kasutajate info</a></p>
-	</th>
-	</tr>
-	</table>
-	<center><img src="<?php echo $picDir .$picFile; ?>" alt="foto"></center> 
+
 </body>
 </html>

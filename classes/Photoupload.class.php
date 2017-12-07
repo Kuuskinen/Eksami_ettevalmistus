@@ -22,9 +22,6 @@
 //hakkame tegema nagu peaks olema
 			$this->tempFile = $tempFile;
 			$this->imageFileType= $imageFileType;
-		
-		
-		
 		}
 		
 		public function savePhoto($directory, $fileName){
@@ -36,9 +33,6 @@
 					$notice= "Vabandust, üleslaadimisel tekkis tõrge! ";
 				}
 			}
-			
-			
-		
 			if($this->imageFileType == "png"){
 				if(imagepng($this->myImage, $target_file, 5)){
 					$notice= "Fail laeti üles";
@@ -76,8 +70,6 @@
 					$this->myTempImage = imagecreatefromgif($this->tempFile);
 				}
 			}
-		
-		
 		public function rezisePhoto($maxWidth, $maxHeight){
 			$this->createImage();
 			
@@ -116,10 +108,7 @@
 			$textColor = imagecolorallocatealpha($this->myImage, 255,255,255,60);//alpha 0 - 127
 					//mis pildile, suurus, nurk vastupäeva, x, y, värv, font, tekst
 			imagettftext($this->myImage, 20, -45, 10, 25, $textColor, "../../graphics/ARIAL.TTF", $text);
-			
 		}
-			
-			
 		public function clearImages(){
 			imagedestroy($this->myTempImage);
 			imagedestroy($this->myImage);
