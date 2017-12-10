@@ -4,11 +4,11 @@
 	//et pääseks ligi sessioonile ja funktsioonidele
 	require("functions.php");
 	
-	//kui pole loginud suunab login lehele SEE ON VÄLJAS, ET DEADLOCK EI TEKIKS!
-	/*if(!isset($_SESSION["userid"])){
+	//kui pole loginud suunab login lehele 
+	if(!isset($_SESSION["userid"])){
 		header("Location: login.php");
 		exit();
-		}*/
+		}
 	
 	//unustatakse kasutajaga seotud sessioon
 	if(isset($_GET["logout"])){ 
