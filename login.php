@@ -1,5 +1,5 @@
 <?php
-	//require("../../../config.php");    // kui probleem on kodutööga ja andmebaasiga 
+	require("../../config.php");    // kui probleem on kodutööga ja andmebaasiga 
 	require("functions.php");
 	//echo $serverHost;
 	
@@ -8,6 +8,8 @@
 		header("Location: main.php");
 		exit();
 	}
+	
+	
 	$signupFirstName = "";
 	$signupFamilyName = "";
 	$gender = "";

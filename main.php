@@ -4,8 +4,10 @@
 	//et pääseks ligi sessioonile ja funktsioonidele
 	require("functions.php");
 	
+	echo("main" + $_SESSION["userId"]);
+	
 	//kui pole loginud suunab login lehele 
-	if(!isset($_SESSION["userid"])){
+	if(!isset($_SESSION["userId"])){
 		header("Location: login.php");
 		exit();
 		}
