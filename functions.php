@@ -1,5 +1,5 @@
 <?php
-	$database = "if17_lutsmeel"; //<---- KASUTAME MEELISE ANDMEBAASI
+	$database = "if17_lutsmeel"; //<---- KASUTAME MEELISE ANDMEBAASI .... OLGU :(
 	require("../../config.php");
 	//alustame sessiooni
 	session_start();

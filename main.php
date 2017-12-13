@@ -1,5 +1,6 @@
 <?php
-    //NB! Palun treppige koodi ning ärge jätke ebavajalikke tühikuid! Koodihügieen on sama oluline kui isiklik hügieen! Aitäh! Teie ML
+    //NB! Palun treppige koodi ning ärge jätke ebavajalikke tühikuid! Koodihügieen on sama oluline kui lauajalg :)
+	
 	
 	//et pääseks ligi sessioonile ja funktsioonidele
 	require("functions.php");
@@ -62,7 +63,7 @@
 			<a class="navbar-brand" href="#"</a>
 		</div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="main.php">Kodu</a></li>
+      <li class="active"><a href="main.php">Pealeht</a></li>
       <li><a href="foto.php">Pildid</a></li>
 	  <li><a href="usersInfo.php">Kasutajate andmed</a></li>
 	  <li><a href="?logout=1">Logi välja</a></li>
@@ -73,7 +74,6 @@
 	<center><img src="<?php echo $picDir .$picFile; ?>" alt="foto"></center> 
 </body>
 <h3><center><A HREF="javascript:history.go(0)">Vajuta siia, et laeks järgmise suvalise pildi</A></center></h3>
-
 <body style="background-color:lightgrey;">
 	<center><h1>Vajuta <a href="https://www.nasa.gov/">SIIA</a> et minna NASA kodulehele.</h1>
 	<h4>Sa oled sisselogitud kui: <?php echo $_SESSION["firstname"] ." " .$_SESSION["lastname"]; ?></h4> 
