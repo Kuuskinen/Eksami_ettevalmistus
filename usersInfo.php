@@ -36,6 +36,7 @@ if(isset($_GET["logout"])){
     <ul class="nav navbar-nav">
       <li class="active"><a href="main.php">Pealeht</a></li>
       <li><a href="foto.php">Pildid</a></li>
+	  <li><a href="userphotos.php">Tsitaadid</a></li>
 	  <li><a href="usersInfo.php">Kasutajate andmed</a></li>
 	  <li><a href="?logout=1">Logi välja</a></li>
     </ul>
