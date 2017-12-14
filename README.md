@@ -13,8 +13,21 @@ Funktsioonid:
 2. Saab üleslaadida fotosid.
 3. Saab lisada tsitaate.
 
+Silver
 
+õppisin juurde rühmatöö olulisust ja koos töötamist, ebaõnnestumisteks võib lugeda lihtsaid koodivigu.
+Keerulist midagi suurt ei olnud.
 
+Meelis 
+
+Õppisin rühmatööd tegema ja ühise eesmärgi nimel töötamist. Muidugi ka PHP koodi Ebaõnnestumist võib lugeda varukoopiate mitte tegemist ja vigade koodi kirjutamist.
+Märkimisväärseid ebaõnnestumisi minu arvates ei olnud.
+
+Raili 
+...
+
+Karl-Erik
+...
 
 
 
