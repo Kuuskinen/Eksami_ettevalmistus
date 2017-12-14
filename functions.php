@@ -61,10 +61,10 @@
 	
 	function saveIdea($userIdea, $color){
 		$notice = "";
-		echo "SIIA JÕUDIS ENNE";
+		//echo "SIIA JÕUDIS ENNE";
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		$stmt = $mysqli->prepare("INSERT INTO vpuserideas (userid, idea, ideacolor) VALUES (?, ?, ?)");
-		echo "SIIA JÕUDIS";
+		//echo "SIIA JÕUDIS";
 		echo $mysqli->error;
 		$stmt->bind_param("iss", $_SESSION["userId"], $userIdea, $color);
 		if($stmt->execute()){
