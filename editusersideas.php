@@ -17,7 +17,7 @@
 	}
 	
 	if(isset($_POST["ideaButton"])){
-	    updateIdea($_POST["id"], test_input($_POST["id"]), $_POST["ideaColor"]);
+	    updateIdea($_POST["idea"], test_input($_POST["ideaColor"]), $_POST["id"]);
         //jään siiasamasse
         header("Location: ?id=" .$_POST["id"]);
         exit();	   
@@ -54,9 +54,10 @@
 			<a class="navbar-brand" href="#"</a>
 		</div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="main.php">Kodu</a></li>
+      <li class="active"><a href="main.php">Pealeht</a></li>
       <li><a href="foto.php">Pildid</a></li>
 	  <li><a href="usersInfo.php">Kasutajate andmed</a></li>
+	  <li><a href="userphotos.php">Tsitaadid</a></li>
 	  <li><a href="?logout=1">Logi välja</a></li>
     </ul>
   </div>

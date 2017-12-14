@@ -27,7 +27,7 @@
 		return $ideaObject;
 	}	
 	
-	function updateIdea($id, $idea, $color){
+	function updateIdea($idea, $color, $id){
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		$stmt = $mysqli->prepare("UPDATE vpuserideas SET idea=?, ideacolor=? WHERE id=?");
 		echo $mysqli->error;
