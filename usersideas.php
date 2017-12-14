@@ -25,10 +25,7 @@
 			$notice = saveIdea($_POST["idea"], $_POST["ideaColor"]);
 		}
 	}
-	
-	
-	
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -36,14 +33,33 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		Silver Kaugemaa programmerib veebilehte
+		Kosmosefotod
 	</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<body class="bg-secondary">
+<div class="container bg-secondary">
+<nav class="navbar navbar_inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"</a>
+		</div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="main.php">Pealeht</a></li>
+      <li><a href="foto.php">Pildid</a></li>
+	  <li><a href="userphotos.php">Tsitaadid</a></li>
+	  <li><a href="usersInfo.php">Kasutajate andmed</a></li>
+	  <li><a href="?logout=1">Logi välja</a></li>
+    </ul>
+  </div>
+
+</nav>
 <body>
 	<h1>Head mõtted</h1>
 	<p>See veebileht on loodud õppetöö raames ning ei sisalda tõsiseltvõetavat sisu.</p>
-	<p><a href="?logout=1">Logi välja</a>!</p>
-	<p><a href="main.php">Pealeht</a></p>
 	<hr>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 		<label>Päeva esimene mõte: </label>
